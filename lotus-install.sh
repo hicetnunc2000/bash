@@ -11,11 +11,13 @@ sudo apt upgrade
 # https://golang.org/doc/install
 
 ./go-install.sh
-source $HOME/.bashrc
 go clean -modcache
+
 # Clone the Lotus repository and Build the Lotus binaries from source and install
 ﻿
 git clone https://github.com/filecoin-project/lotus.git
-cd lotus/
+
+mv lotus ..
+cd ../lotus
 make clean && make all
 sudo make install
